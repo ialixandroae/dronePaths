@@ -1,0 +1,24 @@
+html,
+body,
+.container-fluid,
+.row {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.col-4,
+.col-8 {
+    height: 100%;
+    width: 100%; 
+}
+
+div.jumbotron.jumbotron-fluid {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+#mapid { 
+    height: 100%;
+}

@@ -1,0 +1,34 @@
+html,
+body,
+#mapView {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-container,
+.column-8,
+.column-16 {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.panel {
+    height: calc("100% - 62px"); 
+}
+
+.btn-fill {
+    background-color: #cac8a3;
+    border-color: #cac8a3;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.btn-fill:hover,
+.btn-fill:active{
+    background-color: #979573;
+    border-color: #979573;
+}

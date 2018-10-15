@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ArcGIS JSAPI Drone Paths</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.1.0/css/calcite-web.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/style/style.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
+    
+</head>
+<body>
+    <div class="grid-container">
+        <div class="column-8 tablet-column-12">
+            <header class="top-nav fade-in">
+                <div class="grid-container">
+                        <div class="tablet-hide">
+                            <a href="#" class="top-nav-title" style="margin-left: 1rem;">Drone Path App</a>
+                        </div>
+            
+                        <div class="tablet-show top-nav-flex">
+                            <header class="top-nav-flex-title">
+                                <a href="/" class="top-nav-link">Drone Path App</a>
+                            </header>
+                        </div>
+                    
+                </div>
+            </header>
+            
+            <div class="panel">
+                <h5 class="avenir-light text-ellipsis">1. Click the button below to start drawing</h5>
+                <h5 class="avenir-light text-ellipsis">2. Double click or press 'C' to finish the draw</h5>
+                <h5 class="avenir-light text-ellipsis">3. A new path layer will be created</h5>
+                <h5 class="avenir-light text-ellipsis trailer-1">4. Repeat process for more paths</h5>
+                
+                
+                <button class="btn btn-fill trailer-1" id="drawPath"> Start drawing a path </button>
+                
+                <h5 class="avenir-light text-ellipsis trailer-1">Paths</h5>
+                <div id="layerList"></div>
+            </div>
+        </div>
+
+        <div class="column-16">
+            <div id="mapView"></div>
+        </div>
+    </div>
+    
+    
+    <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.1.0/js/calcite-web.min.js"></script>
+    <script src="https://js.arcgis.com/4.9/"></script>
+    <script src="./src/app/main.js"></script>
+</body>
+</html>
