@@ -9,11 +9,47 @@ const CartoDB_Voyager = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fas
 }).addTo(map);
 
 // Counter for paths name
-let count = 0;
+let count = 1;
+
+
 
 // FeatureGroup is to store paths layers
 const drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems); // method to add the FeatureGroup to the map
+
+
+_loadExistingPath(map, drawnItems)
+
+// Function that loads dummy data
+function _loadExistingPath(_map, pathLayer) {
+    // Dummy path geometry
+    const dummyPath = [
+        [23.50, 46.50],
+        [24.50, 46.50],
+        [24.50, 46.10],
+        [23.50, 46.10],
+        [23.50, 45.50],
+        [24.50, 45.50],
+        [24.50, 45.00],
+        [23.50, 45.00],
+        [24.20, 44.75],
+        [25.50, 44.75]
+    ];
+    const pointList = [];
+
+    dummyPath.map(function(_point){
+        const point = new L.LatLng(_point[1], _point[0]);
+        pointList.push(point);
+    });
+
+    const dummyPolyline = new L.Polyline(pointList,{
+        color: '#f06eaa',
+        weight: 3.5
+    });
+    pathLayer.addLayer(dummyPolyline);
+
+    addLayerInList(count, pathLayer, L.stamp(dummyPolyline));
+}
 
 // Event that triggers each time the button is clicked
 document.getElementById('drawButton').addEventListener('click', function(){
@@ -52,7 +88,7 @@ function addLayerInList(counter, layerGroup, id){
         `<tr class="border"><td scope="row">` + 
         `<div class="form-group form-check">` + 
         `<input type="checkbox" class="form-check-input" id="${id}" checked="true">` + 
-        `<label class="form-check-label">Path${counter}</label>` + 
+        `<label class="form-check-label">Path ${counter}</label>` + 
         `</div></td></tr>`;
     tableBody.innerHTML += checkBox;
 
